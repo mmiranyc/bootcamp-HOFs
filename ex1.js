@@ -20,21 +20,24 @@ const addId = (products) => {
     } )
 }
 
-const printProducts = (products) => {
+const allProducts = (products) => {
     return products.forEach((product) => console.log(product));
 }
 
-const printThird = (products) => {
-    const thridProduct = products.find((product) => product.id === 3);
-    console.log(thridProduct);
+const thirdProduct = (products) => {
+    return products.find((product) => product.id === 3);
 }
 
-const printBlackProduct = products => {
-    const blackProduct = products.filter((product) => product.colors.includes('black'));
-    console.log(blackProduct);
+const blackProduct = products => {
+    return products.filter((product) => product.colors.includes('black'));
 }
 
-const printProductsNoColor= products => {
-    const blackProduct = products.filter((product) => product.colors.length === 0);
-    console.log(blackProduct);
+const productsNoColor= products => {
+    return products.filter((product) => product.colors.length === 0);
 }
+
+const productWithId = addId(products);
+allProducts(productWithId);
+console.log('third product:', thirdProduct(productWithId));
+console.log('black product:', blackProduct(productWithId));
+console.log('products with no color:', productsNoColor(productWithId));
